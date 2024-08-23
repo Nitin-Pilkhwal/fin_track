@@ -1,10 +1,18 @@
-# Install dependencies
+#!/bin/bash
 
+# Exit on error
 set -o errexit
-pip install setuptools
+
+# Install dependencies
+pip install --upgrade pip
 pip install -r requirements.txt
 
-#Run django commands
+# Run Django commands
 python manage.py collectstatic --no-input
 python manage.py migrate
-python manage.py runserver
+
+# Start the server
+# Typically, for production, you use a WSGI server like Gunicorn, not Django's runserver
+# This command is generally used for development purposes
+# Replace the line below with your production WSGI server command
+python manage.py runserver 0.0.0.0:8000
