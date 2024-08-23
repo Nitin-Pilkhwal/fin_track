@@ -1,4 +1,6 @@
 # Install dependencies
+
+set -o errexit
 pip install setuptools
 pip install -r requirements.txt
 
