@@ -1,12 +1,16 @@
 #!/bin/bash
 
-# Install dependencies
-pip install setuptools==0.9.8
+# Exit on error
+set -o errexit
+
+# Upgrade pip and install dependencies
+pip install --upgrade pip
+pip install setuptools
 pip install -r requirements.txt
 
-# Run Django commands
+# Run Django management commands
 python manage.py collectstatic --noinput
 python manage.py migrate
 
-# Start the server
-python manage.py runserver
+# Start Gunicorn server
+gunicorn finance_project.wsgi:application --bind 0.0.0.0:$PORT
