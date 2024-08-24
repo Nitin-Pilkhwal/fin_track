@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install dependencies
-pip install setuptools
+pip install setuptools==0.9.8
 pip install -r requirements.txt
 
 # Run Django commands
