@@ -16,4 +16,5 @@ python manage.py migrate
 # Typically, for production, you use a WSGI server like Gunicorn, not Django's runserver
 # This command is generally used for development purposes
 # Replace the line below with your production WSGI server command
-python manage.py runserver 0.0.0.0:8000
+pip install gunicorn
+gunicorn finance_project.wsgi:application --bind 0.0.0.0:8000
