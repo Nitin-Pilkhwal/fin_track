@@ -3,9 +3,13 @@
 
 {% block content %}
 
-<h1 class="mt-4 mb-6 text-2xl leading-none tracking-tight text-white md:text-3xl lg:text-4xl">
-    Welcome to the Personal Finance Tracker
+<h1 class="center mt-4 mb-6 text-2xl leading-none tracking-tight text-white md:text-3xl lg:text-6xl">
+    Welcome to FinTrack
 </h1>
+
+<p class="text-white lg:text-3xl">
+Your personal Finance Tracker
+</p>
 
 
 {% if user.is_authenticated %}
@@ -46,9 +50,8 @@
 
 {% else %}
 
+    
+
 {% endif %}
-
-
-<p class="text-white">{% lorem %}</p>
 
 {% endblock content %}
